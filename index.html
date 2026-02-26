@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iberá 2400 | Sion Home</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+color:#333;
+}
+
+header{
+background:white;
+padding:15px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
+
+header img{ height:60px; }
+
+.hero{
+height:55vh;
+background:url('IMG_0186.jpeg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:36px;
+font-weight:bold;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+background:white;
+}
+
+.price{
+font-size:30px;
+color:#0f766e;
+margin:20px 0;
+font-weight:bold;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:12px;
+margin-top:15px;
+}
+
+.card{
+background:#f7f7f7;
+padding:12px;
+border-radius:10px;
+text-align:center;
+}
+
+.carousel{
+position:relative;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+transition:.4s;
+}
+
+.slides img{
+width:100%;
+border-radius:10px;
+}
+
+.nav{
+position:absolute;
+top:45%;
+background:white;
+border:none;
+padding:10px 15px;
+border-radius:50%;
+cursor:pointer;
+font-size:22px;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+.map{
+width:100%;
+height:320px;
+border:0;
+border-radius:10px;
+}
+
+.section{ margin-top:40px; }
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="logo.png">
+</header>
+
+<div class="hero">
+Iberá 2400
+</div>
+
+<div class="container">
+
+<div class="price">USD 495000</div>
+
+<h2>Información general</h2>
+<div class="features">
+<div class="card">170 m² construido</div>
+<div class="card">154 m² cubierta</div>
+<div class="card">5 ambientes</div>
+<div class="card">4 dormitorios</div>
+<div class="card">4 baños</div>
+<div class="card">1 toilette</div>
+<div class="card">1 cochera</div>
+<div class="card">40 años</div>
+</div>
+
+<div class="section">
+<h2>Superficies</h2>
+<div class="features">
+<div class="card">Cubierta: 154 m²</div>
+<div class="card">Semicubierta: 15 m²</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Imágenes</h2>
+
+<div class="carousel">
+<button class="nav prev" onclick="moveSlide(-1)">‹</button>
+
+<div class="slides" id="slides">
+<img src="IMG_0186.jpeg">
+<img src="IMG_0187.jpeg">
+<img src="IMG_0188.jpeg">
+<img src="IMG_0190.jpeg">
+<img src="IMG_0191.jpeg">
+<img src="IMG_0192.jpeg">
+<img src="IMG_0194.jpeg">
+<img src="IMG_0196.jpeg">
+<img src="IMG_0197.jpeg">
+<img src="IMG_0198.jpeg">
+<img src="IMG_0199.jpeg">
+<img src="IMG_0200.jpeg">
+</div>
+
+<button class="nav next" onclick="moveSlide(1)">›</button>
+</div>
+</div>
+
+<div class="section">
+<h2>Descripción</h2>
+<p>
+AMPLIO LUMINOSO Y HECHO A NUEVO.
+Piso de 5 ambientes con dependencia en Núñez,
+con cochera, baulera y seguridad.
+Refaccionado hace pocos meses con cañerías nuevas
+de gas y agua.
+</p>
+</div>
+
+<div class="section">
+<h2>Ubicación</h2>
+<iframe class="map"
+src="https://maps.google.com/maps?q=Ibera%202400%20Buenos%20Aires&t=&z=15&output=embed">
+</iframe>
+</div>
+
+</div>
+
+<footer>
+<strong>Sion Home</strong><br>
+📞 +54 9 11 6975-2943<br>
+✉️ siontalgam2@gmail.com
+</footer>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/5491169752943">
+WhatsApp
+</a>
+
+<script>
+let index=0;
+function moveSlide(step){
+const slides=document.getElementById("slides");
+const total=slides.children.length;
+index+=step;
+if(index<0) index=total-1;
+if(index>=total) index=0;
+slides.style.transform="translateX(-"+index*100+"%)";
+}
+</script>
+
+</body>
+</html>
